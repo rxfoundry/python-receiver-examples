@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "python-sdk-examples"
+version = "0.1.0"
+description = "Examples to demonstrate usage of the Swifty Python SDK"
+license = "Apache-2.0"
+authors = ["Paul Tindall <paul.tindall@rxfoundry.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+"rxfoundry.clients.swifty_api" = ">=0.0.847"
+certifi = "^2025.11.12"
+google-cloud-pubsub = ">=1.7,<3.0"
+
+[tool.poetry.dev-dependencies]
+black = "24.3.0"
+coverage = "^7.2"
+flake8 = "^4.0.1"
+pytest = "^7.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target_version = [ "py311", "py312" ]
+include = "\\.pyi?$"
+exclude = """
+/(\\.git/
+  |\\.eggs
+  |\\.hg
+  |__pycache__
+  |\\.cache
+  |\\.ipynb_checkpoints
+  |\\.mypy_cache
+  |\\.pytest_cache
+  |\\.tox
+  |\\.venv
+  |node_modules
+  |_build
+  |buck-out
+  |build
+  |dist
+  |media
+  |infrastructure
+  |templates
+  |locale
+)/
+"""
